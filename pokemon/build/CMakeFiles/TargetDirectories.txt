@@ -1,0 +1,3 @@
+/Users/sirine/Desktop/dev/c++p/pokemon/build/CMakeFiles/pokemon.dir
+/Users/sirine/Desktop/dev/c++p/pokemon/build/CMakeFiles/edit_cache.dir
+/Users/sirine/Desktop/dev/c++p/pokemon/build/CMakeFiles/rebuild_cache.dir
