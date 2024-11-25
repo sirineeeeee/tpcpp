@@ -1,0 +1,3 @@
+/Users/sirine/Desktop/dev/c++p/serietemp/build/CMakeFiles/serietemp.dir
+/Users/sirine/Desktop/dev/c++p/serietemp/build/CMakeFiles/edit_cache.dir
+/Users/sirine/Desktop/dev/c++p/serietemp/build/CMakeFiles/rebuild_cache.dir
