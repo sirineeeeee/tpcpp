@@ -1,27 +1,28 @@
-#ifndef TSDATA_H
-#define TSDATA_H
+#ifndef TIMESERIESDATASET_H
+#define TIMESERIESDATASET_H
 
+#include <vector>
+#include <algorithm>
+#include <numeric>
 #include <cmath>
-#include <random>
-using namespace std; 
-#include "tsgen.h"
-
+using namespace std;
 
 class TimeSeriesDataset {
-    public:
-        TimeSeriesDataset();
-        TimeSeriesDataset(bool,bool);
+public:
+    TimeSeriesDataset(bool znormalize = false, bool isTrain = true);
 
-        void addTimeSeries(vector<double>,bool);
-        void addTimeSeries(vector<double>);
+    void addTimeSeries(const vector<double>& series, int label = -1);
 
-    private:
-        bool znormalize;
-        bool isTrain;
-        vector<double> data;
-        vector<int> labels;
-        int maxLength;  
-        int numberOfSamples;  
+private:
+    vector<double> zNormalize(const vector<double>& series);
+
+public:
+    bool znormalize;
+    bool isTrain;
+    vector<vector<double>> data;
+    vector<int> labels;
+    int maxLength;
+    int numberOfSamples;
 };
 
-#endif
+#endif // TIMESERIESDATASET_H

@@ -4,7 +4,7 @@
 #include "headers/tsdata.h" 
 #include "headers/knn.h" 
 #include <iostream>
-
+#include <vector>
 
 using namespace std; 
 

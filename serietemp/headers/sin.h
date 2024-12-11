@@ -1,13 +1,20 @@
-#ifndef SIN_H
-#define SIN_H
+#ifndef SINWAVEGENERATOR_H
+#define SINWAVEGENERATOR_H
+
 #include "tsgen.h"
+#include <cmath>
 
-class SinWaveGenerator : TimeSeriesGenerator{
-    public:
-        SinWaveGenerator();
-        SinWaveGenerator(int);
+class SinWaveGenerator : public TimeSeriesGenerator {
+public:
+    SinWaveGenerator(double amplitude, double frequency, double phase, int _seed = 0);
+    SinWaveGenerator();
 
-        vector<double> generateTimeSeries(int) override;
+    vector<double> generateTimeSeries(int _size) override;
+
+private:
+    double amplitude;
+    double frequency;
+    double phase;
 };
 
-#endif
+#endif // SINWAVEGENERATOR_H

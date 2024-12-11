@@ -1,20 +1,20 @@
-#ifndef TSGEN_H
-#define TSGEN_H
+#ifndef TIMESERIESGENERATOR_H
+#define TIMESERIESGENERATOR_H
 
-#include <cmath>
-#include <random>
-using namespace std; 
-
+#include <vector>
+#include <iostream>
+using namespace std;
 
 class TimeSeriesGenerator {
-    public:
-        TimeSeriesGenerator();
-        TimeSeriesGenerator(int);
+public:
+    TimeSeriesGenerator();
+    TimeSeriesGenerator(int _seed);
 
-        virtual vector<double> generateTimeSeries(int);
-        void printTimeSeries(const vector<double>);
-        int seed;
-        
+    virtual vector<double> generateTimeSeries(int _size) = 0;
+
+    static void printTimeSeries(const vector<double>& vect);
+
+    int seed;
 };
 
-#endif
+#endif // TIMESERIESGENERATOR_H

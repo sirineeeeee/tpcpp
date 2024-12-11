@@ -1,26 +1,21 @@
 #include "headers/stp.h"
 
-StepGenerator::StepGenerator():
-TimeSeriesGenerator()
-{}
+StepGenerator::StepGenerator(int _seed) : TimeSeriesGenerator(_seed) {}
 
+StepGenerator::StepGenerator() : StepGenerator(0) {}
 
-StepGenerator::StepGenerator(int _seed):
-TimeSeriesGenerator(_seed)
-{}
-
-
-vector<double> StepGenerator::generateTimeSeries(int _size){
-    vector<double> ret;
-    ret.reserve(_size);
+vector<double> StepGenerator::generateTimeSeries(int _size) {
     srand(seed);
-    double n;
-    for (int i =0; i< _size; i++){
-        if (rand()/1){
-            srand(seed);
-            n = rand();
+    vector<double> series;
+    series.reserve(_size);
+
+    double previous = 0;
+    series.push_back(previous);
+    for (int i = 1; i < _size; ++i) {
+        if (rand() % 2 == 0) {
+            previous = rand() % 101;
         }
-        ret.push_back(n);
+        series.push_back(previous);
     }
-    return ret;
+    return series;
 }
